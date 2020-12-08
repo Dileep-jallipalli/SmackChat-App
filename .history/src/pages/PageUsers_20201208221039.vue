@@ -56,10 +56,25 @@ const contacts = [
   },
 ];
 
+const offline = [
+  {
+    id: 5,
+    name: "Brunhilde Panswick",
+    email: "bpanswick4@csmonitor.com",
+    avatar: "avatar2.jpg",
+  },
+  {
+    id: 6,
+    name: "Winfield Stapforth",
+    email: "wstapforth5@pcworld.com",
+    avatar: "avatar6.jpg",
+  },
+];
 export default {
   data() {
     return {
       contacts,
+      offline,
     };
   },
 };
