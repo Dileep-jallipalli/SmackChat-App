@@ -1,0 +1,8 @@
+{ 
+        "users": {
+                "USERID1": {
+                        "name": "Dileep",
+                        "email": "dileep@gmail.com"
+                }
+        }
+}

@@ -7,7 +7,7 @@ import "firebase/auth";
 import "firebase/database";
 
 // Your web app's Firebase configuration
-        //Add your firebase configuration
+
       // Initialize Firebase
      let firebaseApp =  firebase.initializeApp(firebaseConfig);
      let firebaseAuth = firebase.auth();

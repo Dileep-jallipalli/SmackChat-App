@@ -1,0 +1,24 @@
+{ 
+        "users": {
+                "USERID1": {
+                        "name": "Dileep",
+                        "email": "dileep@gmail.com",
+                        "online": true
+                },
+                "USERID2": {
+                        "name": "sai",
+                        "email": "sai@gmail.com",
+                        "online": true
+                }
+
+        },
+        "chats": {
+                "USERID1": {
+                        "USERID2": {
+                                "MESSAGEID1": {
+                                        text: ""
+                                }
+                        }
+                }
+        }
+}
