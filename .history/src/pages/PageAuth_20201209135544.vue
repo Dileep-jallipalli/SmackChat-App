@@ -1,6 +1,6 @@
 <template>
         <q-page class="flex q-pa-md">
-                <q-card class="full-width">
+                <q-card>
                         <q-tabs
                         v-model="tab"
                         dense
@@ -18,11 +18,11 @@
 
                         <q-tab-panels v-model="tab" animated>
                         <q-tab-panel name="login">
-                                <login-register :tab="tab"  />
+                        
                         </q-tab-panel>
 
                         <q-tab-panel name="register">
-                                <login-register :tab="tab"  />
+                        
                         </q-tab-panel>
                         </q-tab-panels>
                 </q-card>
@@ -34,11 +34,8 @@
         export default {
                 data () {
                         return {
-                                tab: 'login'
+                                tab: 'mails'
                 }
-        },
-        components:{
-                'login-register' :  require('components/LoginRegister.vue').default     
         }
 }
 </script>
