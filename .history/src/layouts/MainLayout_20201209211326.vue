@@ -51,11 +51,11 @@ export default {
                 if (currentPath == "/") return "SmackChat";
                 else if (currentPath == "/chat") return "Chat";
                 else if (currentPath == "/auth") return "Auth ";
-    }
-  },
+    },
     methods:{
             ...mapActions('store', ['logoutUser'])
   }
+  },
 };
 </script>
 <style lang="stylus">

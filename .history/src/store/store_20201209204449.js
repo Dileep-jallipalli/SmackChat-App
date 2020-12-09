@@ -33,8 +33,8 @@ const actions = {
                 })
         },
         logoutUser() {
-                firebaseAuth.signOut ( ) 
-        },
+                firebaseAuth.signOut()
+        }
         handleAuthStateChanged({ commit }){
                 firebaseAuth.onAuthStateChanged(user => {
                         if (user) {

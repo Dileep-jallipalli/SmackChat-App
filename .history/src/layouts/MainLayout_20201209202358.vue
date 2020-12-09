@@ -19,18 +19,6 @@
                 flat
                 dense
                 label="Login" />
-               <q-btn
-                v-else
-                @click="logoutUser"
-                class="absolute-right q-pr-sm"
-                icon="account_circle"
-                no-caps
-                flat
-                dense
-                >
-                Logout<br>
-                {{ userDetails.name }}
-               </q-btn>
         </q-toolbar>
         </q-header>
 
@@ -41,25 +29,17 @@
 </template>
 
 <script>
-import { mapState , mapActions }  from 'vuex'
+import { mapState }  from 'vuex'
 export default {
   computed: {
-        ...mapState('store', ['userDetails']),
+        ...mapState('store', ['userDetails'])
         title() {
                 console.log(this.$route);
                 let currentPath = this.$route.fullPath;
                 if (currentPath == "/") return "SmackChat";
                 else if (currentPath == "/chat") return "Chat";
                 else if (currentPath == "/auth") return "Auth ";
-    }
+    },
   },
-    methods:{
-            ...mapActions('store', ['logoutUser'])
-  }
 };
 </script>
-<style lang="stylus">
-        .q-toolbar
-                .q-btn
-                        line-height: 1.2
-</style>
