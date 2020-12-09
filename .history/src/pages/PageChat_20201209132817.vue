@@ -15,7 +15,7 @@
   	<q-footer elevated>
   	  <q-toolbar>
   	  	<q-form 
-  	  		@click="sendMessage"
+  	  		@submit="sendMessage"
   	  		class="full-width">
 	  	    <q-input
 	  	    	v-model="newMessage"

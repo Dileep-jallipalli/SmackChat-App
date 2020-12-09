@@ -17,7 +17,7 @@
                 no-caps
                 flat
                 dense
-                label="Login" />
+                label="LOGIN" />
         </q-toolbar>
         </q-header>
 

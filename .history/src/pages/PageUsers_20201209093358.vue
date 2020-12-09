@@ -1,21 +1,20 @@
 <template>
-  <q-page class="flex q-pa-md">
-    <q-list class="full-width" separator>
-      <q-item v-for="user in users" :key="user.id" clickable v-ripple to="/chat">
+  <q-page class="flex">
+    <q-list bordered>
+      <q-item v-for="user in users" :key="user.id" class="q-my-sm" clickable v-ripple>
         <q-item-section avatar>
           <q-avatar color="primary" text-color="white">
-            {{ user.name.charAt(0) }}
+            {{ user.letter }}
           </q-avatar>
         </q-item-section>
 
         <q-item-section>
           <q-item-label>{{ user.name }}</q-item-label>
+          <q-item-label caption lines="1">{{ user.email }}</q-item-label>
         </q-item-section>
 
         <q-item-section side>
-          <q-badge :color="user.online ? 'light-green-5' : 'grey-4'">
-            {{ user.online ? "online" : "offline" }}
-          </q-badge>
+          <q-icon name="chat_bubble" color="green" />
         </q-item-section>
       </q-item>
 
@@ -29,22 +28,26 @@ const users = [
   {
     id: 1,
     name: "Ruddy Jedrzej",
-    online: true,
+    email: "rjedrzej0@discuz.net",
+    letter: "R",
   },
   {
     id: 2,
     name: "Mallorie Alessandrini",
-    online: true,
+    email: "malessandrini1@marketwatch.com",
+    letter: "M",
   },
   {
     id: 3,
     name: "Elisabetta Wicklen",
-    online: false,
+    email: "ewicklen2@microsoft.com",
+    letter: "E",
   },
   {
     id: 4,
     name: "Seka Fawdrey",
-    online: true,
+    email: "sfawdrey3@wired.com",
+    letter: "S",
   },
 ];
 

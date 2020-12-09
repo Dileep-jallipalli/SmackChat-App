@@ -11,13 +11,10 @@
                 label="Back" />
                 <q-toolbar-title class="absolute-center"> {{ title }}</q-toolbar-title>
                 <q-btn
-                to="/auth"
-                class="absolute-right q-pr-sm"
                 icon="account_circle"
-                no-caps
                 flat
                 dense
-                label="Login" />
+                label="Back" />
         </q-toolbar>
         </q-header>
 

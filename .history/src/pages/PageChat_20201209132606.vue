@@ -5,8 +5,8 @@
     </q-banner>
   	<div class="q-pa-md column col justify-end">
   		<q-chat-message
-  		v-for="message in messages"
-  		:key="message.text"
+  			v-for="message in messages"
+  			:key="message.text"
   		  :name="message.from"
   		  :text="[message.text]"
   		  :sent="message.from == 'me' ? true : false"
@@ -15,7 +15,7 @@
   	<q-footer elevated>
   	  <q-toolbar>
   	  	<q-form 
-  	  		@click="sendMessage"
+  	  		@submit="sendMessage"
   	  		class="full-width">
 	  	    <q-input
 	  	    	v-model="newMessage"
