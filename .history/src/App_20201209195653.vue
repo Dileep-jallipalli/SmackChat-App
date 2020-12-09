@@ -7,11 +7,11 @@
 import { mapActions } from 'vuex'
 export default {
         methods: {
-                ...mapActions('store', ['handleAuthStateChanged']),
+                ...mapActions('store', ['handleAuthStateChnaged']),
 
         },
         mounted(){
-                this.handleAuthStateChanged()
+                
         }
 }
 </script>

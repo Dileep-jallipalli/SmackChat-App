@@ -48,7 +48,6 @@ const actions = {
                         }
                         else{
                                 //user is logged out
-                                commit('setUserDetails', {})
                         }
                       });
         }

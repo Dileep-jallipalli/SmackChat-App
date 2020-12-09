@@ -38,17 +38,18 @@ const actions = {
                           // User is signed in.
                                 let userId = firebaseAuth.currentUser.uid
                                 firebaseDb.ref('users/' + userId).once('value', snapshot => {
+                                        console.log('snapshot', snapshot)
                                         let userDetails = snapshot.val()
+                                        console.log('userDetails', userDetails)
                                         commit('setUserDetails', { 
                                                 name: userDetails.name,
                                                 email: userDetails.email, 
-                                                userId: userId
+                                                
                                         })
                                 })
                         }
                         else{
                                 //user is logged out
-                                commit('setUserDetails', {})
                         }
                       });
         }

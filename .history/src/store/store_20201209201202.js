@@ -4,7 +4,7 @@ const state = {
 }
 const mutations = {
         setUserDetails(state, payload){
-                state.userDetails = payload
+                
         }
 }
 const actions = {
@@ -32,23 +32,19 @@ const actions = {
                         console.log(error.message)
                 })
         },
-        handleAuthStateChanged({ commit }){
+        handleAuthStateChanged(){
                 firebaseAuth.onAuthStateChanged(user => {
                         if (user) {
                           // User is signed in.
                                 let userId = firebaseAuth.currentUser.uid
                                 firebaseDb.ref('users/' + userId).once('value', snapshot => {
+                                        console.log('snapshot', snapshot)
                                         let userDetails = snapshot.val()
-                                        commit('setUserDetails', { 
-                                                name: userDetails.name,
-                                                email: userDetails.email, 
-                                                userId: userId
-                                        })
+                                        console.log('userDetails', userDetails)
                                 })
                         }
                         else{
                                 //user is logged out
-                                commit('setUserDetails', {})
                         }
                       });
         }
