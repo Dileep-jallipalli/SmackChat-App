@@ -23,13 +23,7 @@ const actions = {
                 })
         },
         loginUser({}, payload){
-                firebaseAuth.signInWithEmailAndPassword(payload.email, payload.password)
-                .then(response => {
-                        console.log(response);
-                })
-                .catch(error => {
-                        console.log(error.message)
-                })
+                
         }
 }
 const getters = {

@@ -47,7 +47,7 @@ import {mapActions} from 'vuex'
                         ...mapActions('store', ['registerUser', 'loginUser']),
                         submitForm() {
                                 if(this.tab == 'login'){
-                                        this.loginUser(this.formData)
+                                        console.log("login");
                                 }
                                 else{
                                         this.registerUser(this.formData)
