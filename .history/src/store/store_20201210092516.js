@@ -62,7 +62,7 @@ const actions = {
 		  	dispatch('firebaseUpdateUser', {
 		  		userId: state.userDetails.userId,
 		  		updates: {
-		  			online: "false"
+		  			online: false
 		  		}
 		  	})
 		  	commit('setUserDetails', {})
