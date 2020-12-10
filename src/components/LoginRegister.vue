@@ -1,62 +1,57 @@
 <template>
-        <div>
-                <q-form @click="submitForm">
-                        <q-input
-                          v-if="tab == 'register'"
-                          outlined
-                          class="q-mb-md"
-                          v-model="formData.name"
-                          label="Name" />
-                        <q-input
-                          outlined
-                          class="q-mb-md"
-                          type="email"
-                          v-model="formData.email"
-                          label="Email"  />
-                        <q-input
-                          outlined
-                          class="q-mb-md"
-                          type="password"
-                          v-model="formData.password"
-                          label="Password"  />
-                          <div class="row">
-                                 <q-space/>
-                                <q-btn
-                                  color="primary"
-                                  type:="submit"
-                                  :label="tab" />
-                          </div>
-                </q-form>
-        </div>
+	<q-form @submit="submitForm">
+		<q-input
+			v-if="tab == 'register'"
+			v-model="formData.name"
+			class="q-mb-md"
+			outlined
+			label="Name" />
+		<q-input
+			v-model="formData.email"
+			class="q-mb-md"
+			outlined
+			type="email"
+			label="Email" />
+		<q-input
+			v-model="formData.password"
+			class="q-mb-md"
+			outlined
+			type="password"
+			label="Password" />
+		<div class="row">
+			<q-space />
+			<q-btn
+				color="primary"
+				type="submit"
+				:label="tab" />
+		</div>
+	</q-form>
 </template>
 
 <script>
-import {mapActions} from 'vuex'
-        export default {
-                props: ['tab'],
-                data(){
-                        return{
-                                formData: {
-                                        name: ' ',
-                                        email: 'dileep@text.com',
-                                        password: 'dileep'
-                                }
-                        }
-                },
-                methods: {
-                        ...mapActions('store', ['registerUser', 'loginUser']),
-                        submitForm() {
-                                if(this.tab == 'login'){
-                                        this.loginUser(this.formData)
-                                }
-                                else{
-                                        this.registerUser(this.formData)
-                                }
-                        }
-                }
-        }
+	import { mapActions } from 'vuex'
+
+	export default {
+		props: ['tab'],
+		data() {
+			return {
+				formData: {
+					name: '',
+					email: 'danny@test.com',
+					password: '123456'
+				}
+			}
+		},
+		methods: {
+			...mapActions('store', ['registerUser', 'loginUser']),
+			submitForm() {
+				if (this.tab == 'login') {
+					this.loginUser(this.formData)
+				}
+				else {
+					this.registerUser(this.formData)
+				}
+			}
+		}
+	}
 </script>
-
-<style lang="scss" scoped>
-
-</style>

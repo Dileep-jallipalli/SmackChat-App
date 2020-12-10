@@ -1,23 +1,23 @@
-// Firebase App (the core Firebase SDK) is always required and
-// must be listed before other Firebase SDKs
-import firebase from "firebase/app";
+// Firebase App (the core Firebase SDK) is always required and must be listed first
+import * as firebase from "firebase/app";
 
-// Add the Firebase services that you want to use
+// Add the Firebase products that you want to use
 import "firebase/auth";
 import "firebase/database";
 
-// Your web app's Firebase configuration
+// PUT YOUR OWN FIREBASE CONFIGURATION HERE
 var firebaseConfig = {
-        apiKey: "AIzaSyBxqG51NTU-3plKc8vunXDmKR5ss1l1-M8",
-        authDomain: "smackchat-7104f.firebaseapp.com",
-        projectId: "smackchat-7104f",
-        storageBucket: "smackchat-7104f.appspot.com",
-        messagingSenderId: "244332313508",
-        appId: "1:244332313508:web:fedcf661ae71764dae9f31"
-      };
-      // Initialize Firebase
-     let firebaseApp =  firebase.initializeApp(firebaseConfig);
-     let firebaseAuth = firebase.auth();
-     let firebaseDb = firebase.database();
+  apiKey: "YOUR APIKEY",
+  authDomain: "YOUR AUTHDOMAIN",
+  databaseURL: "YOUR DATABASEURL",
+  projectId: "YOUR PROJECTID",
+  storageBucket: "",
+  messagingSenderId: "YOUR MESSAGINGSENDERID",
+  appId: "YOUR APPID"
+};
+// Initialize Firebase
+let firebaseApp = firebase.initializeApp(firebaseConfig);
+let firebaseAuth = firebaseApp.auth()
+let firebaseDb = firebaseApp.database()
 
-     export { firebaseAuth, firebaseDb}
+export { firebaseAuth, firebaseDb }

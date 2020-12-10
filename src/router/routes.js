@@ -2,20 +2,21 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    component: () => import('layouts/MyLayout.vue'),
     children: [
       { path: '', component: () => import('pages/PageUsers.vue') },
-      { path: '/chat', component: () => import('pages/PageChat.vue') },
+      { path: '/chat/:otherUserId', component: () => import('pages/PageChat.vue') },
       { path: '/auth', component: () => import('pages/PageAuth.vue') }
     ]
-  },
-
-  // Always leave this as last one,
-  // but you can also remove it
-  {
-    path: '*',
-    component: () => import('pages/Error404.vue')
   }
 ]
+
+// Always leave this as last one
+if (process.env.MODE !== 'ssr') {
+  routes.push({
+    path: '*',
+    component: () => import('pages/Error404.vue')
+  })
+}
 
 export default routes
